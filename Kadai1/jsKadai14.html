@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id1"></h1>
+    <script>
+        let endDate = new Date(2025,4,3,10);
+        function time(){
+            let now = new Date();
+            let totalSeconds = Math.floor((endDate -now) / 1000 );
+            let day = Math.floor(totalSeconds / 86400);
+            totalSeconds -= day * 86400;
+            let hour = Math.floor(totalSeconds / 3600);
+            totalSeconds  -= hour * 3600;
+            let minute = Math.floor(totalSeconds / 60);
+            totalSeconds -= minute * 60;
+           document.getElementById('id1').innerHTML = `2025年大阪万博まであと ${day}日${hour}時間${minute}分${totalSeconds}秒`;
+        }
+        setInterval(time,1000);
+    </script>
+</body>
+</html>

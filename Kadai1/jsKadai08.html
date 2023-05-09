@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const input = window.prompt('10進数―2進数変更:0から255までの値を入力してください。', '');
+        let binary = parseInt(input,10).toString(2);
+
+        if (isNaN(input) || input <= 0) {
+            document.write('<p>不正な値が入力されました。</p>');
+        } else if (input > 255) {
+            document.write('<p>255より大きい値が入力されました。</p>');
+        } else {
+            
+                document.write(`<p>10進数${192}を2進数変更した結果は「${binary}」です。</p>`);
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>こんにちはを繰り返し表示</title>
+</head>
+<body>
+  <div id="display"></div>
+  <script>
+    function display() {
+      const div = document.getElementById('display');
+      div.innerHTML += `<p>こんにちは<br></P>`;
+    }
+
+    setInterval(display, 1000);
+  </script>
+</body>
+</html>

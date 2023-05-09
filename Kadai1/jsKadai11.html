@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--後ろに操作できる空間を追加します-->
+    <h1>現在の時間 : <span id="id1"></span></h1>
+    
+    <input type="button" value="時刻を取得" onclick="timeGet()">
+    <script>
+        
+        function timeGet(){
+           const nowTime = new Date();
+           //textContentメソッドを使って内容を変更する
+          document.getElementById('id1').textContent = nowTime.toLocaleString();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id1" align="center">CSS3による回伝アニメーション</h1>
+    <input type="button" value="X軸スタート" onclick="startRotation('x')">
+    <input type="button" value="Y軸スタート" onclick="startRotation('y')">
+    <input type="button" value="Z軸スタート" onclick="startRotation('z')">
+    <input type="button" value="X軸ストップ" onclick="stop('x')">
+    <input type="button" value="Y軸ストップ" onclick="stop('y')">
+    <input type="button" value="Z軸ストップ" onclick="stop('z')">
+    <script>
+        let dx = 0;
+        let dy = 0;
+        let dz = 0;
+
+        let timeX = null;
+        let timeY = null;
+        let timeZ = null;
+
+        function rotationChar(hikisu){
+            if (hikisu === 'x') {
+                dx += 6;
+                dx = dx % 180;
+                document.getElementById('id1').style.transform = `rotateX(${dx}deg)`;
+            } else if (hikisu === 'y') {
+                dy += 6;
+                dy = dy % 360;
+                document.getElementById('id1').style.transform = `rotateY(${dy}deg)`;
+            } else if (hikisu === 'z') {
+                dz += 6;
+                dz = dz % 360;
+                document.getElementById('id1').style.transform = `rotateZ(${dz}deg)`;
+            }
+        }
+
+        function startRotation(hikisu){
+            if (hikisu === 'x' && timeX === null) {
+                timeX = setInterval(function() {rotationChar(hikisu);}, 25);
+            } else if (hikisu === 'y' && timeY === null) {
+                timeY = setInterval(function() {rotationChar(hikisu);}, 25);
+            } else if (hikisu === 'z' && timeZ === null) {
+                timeZ = setInterval(function() {rotationChar(hikisu);}, 25);
+            }
+        }
+
+        function stop(hikisu){
+            if (hikisu === 'x') {
+                clearInterval(timeX);
+                timeX = null;
+            } else if (hikisu === 'y') {
+                clearInterval(timeY);
+                timeY = null;
+            } else if (hikisu === 'z') {
+                clearInterval(timeZ);
+                timeZ = null;
+            }
+        }
+    </script>
+</body>
+</html>
