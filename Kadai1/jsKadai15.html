@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = navigator.userAgent;
+        if(str.toLowerCase().indexOf("chrome") > -1){
+            document.write(`Chromeで閲覧しています`);
+        }else if(str.toLowerCase().indexOf("firefox") > -1){
+            document.write(`Firefoxで閲覧しています`);
+        }else{
+            document.write(`Firefoxまたは Chrome を使用してください。`);
+        }
+
+    </script>
+</body>
+</html>
